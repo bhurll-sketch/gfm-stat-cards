@@ -163,7 +163,11 @@ def chart(c):
     fig, ax = plt.subplots(figsize=(4.5, 3.5))
     vals, labels = c["values"], c["labels"]
     if c["type"] == "hbar":
-        col = hexc(TONE.get(c.get("tone", "neutral"), TONE["neutral"]))
+        tone = c.get("tone", "neutral")
+        if tone == "auto":  # red for falls, green for rises, per bar
+            col = [hexc(TONE["up"] if v >= 0 else TONE["down"]) for v in vals]
+        else:
+            col = hexc(TONE.get(tone, TONE["neutral"]))
         ys = list(range(len(labels)))[::-1]
         ax.barh(ys, vals, height=0.56, color=col)
         lo, hi = min(0, min(vals)), max(0, max(vals)); span = (hi - lo) or 1

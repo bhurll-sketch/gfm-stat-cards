@@ -1,0 +1,123 @@
+{
+ "date_label": "9 to 13 Nov 2026",
+ "file_stub": "week-in-markets_13nov",
+ "cover": {
+  "big": "100%",
+  "headline": [
+   "Markets now see a Fed rate rise",
+   "in December as a certainty"
+  ],
+  "context": "Hot inflation, a 5% bond yield and a CEO exit at Nvidia. Here is the week in four charts."
+ },
+ "slides": [
+  {
+   "kicker": "The scoreboard",
+   "title": "Stocks still rose on the week",
+   "subtitle": "Weekly change, major US indexes, 6 to 13 Nov",
+   "chart": {
+    "type": "hbar",
+    "labels": [
+     "S&P 500",
+     "Nasdaq",
+     "Dow"
+    ],
+    "values": [
+     2.5,
+     2.3,
+     2.1
+    ],
+    "tone": "auto",
+    "suffix": "%",
+    "signed": true
+   },
+   "keyfig": "Nvidia: down more than 12% on the week"
+  },
+  {
+   "kicker": "The daily path",
+   "title": "Monday did the heavy lifting",
+   "subtitle": "S&P 500 daily closes, 6 to 13 Nov",
+   "chart": {
+    "type": "line",
+    "labels": [
+     "Fri\n6 Nov",
+     "Mon\n9 Nov",
+     "Tue\n10 Nov",
+     "Wed\n11 Nov",
+     "Thu\n12 Nov",
+     "Fri\n13 Nov"
+    ],
+    "values": [
+     7376.86,
+     7549.94,
+     7520.93,
+     7619.38,
+     7592.4,
+     7561.79
+    ],
+    "decimals": 0
+   },
+   "keyfig": "Monday: +2.35%, the best day since April"
+  },
+  {
+   "kicker": "The Fed",
+   "title": "A December rise is fully priced",
+   "subtitle": "Market odds for the Fed decision on 9 Dec, at 13 Nov",
+   "chart": {
+    "type": "hbar",
+    "labels": [
+     "Rise of 0.25 pt",
+     "Rise of 0.50 pt",
+     "No change"
+    ],
+    "values": [
+     86,
+     14,
+     0
+    ],
+    "tone": "neutral",
+    "suffix": "%",
+    "decimals": 0
+   },
+   "keyfig": "10-year Treasury yield: back above 5%"
+  },
+  {
+   "kicker": "The bigger picture",
+   "title": "Still well ahead for 2026",
+   "subtitle": "Year-to-date change after Friday's close",
+   "chart": {
+    "type": "hbar",
+    "labels": [
+     "S&P 500",
+     "Dow",
+     "Nasdaq"
+    ],
+    "values": [
+     10.5,
+     8.9,
+     8.2
+    ],
+    "tone": "auto",
+    "suffix": "%",
+    "signed": true
+   }
+  }
+ ],
+ "watch": [
+  [
+   "Tue 17 Nov",
+   "Nvidia results, first since CEO exit"
+  ],
+  [
+   "Tue 17 Nov",
+   "US retail sales for October"
+  ],
+  [
+   "Wed 18 Nov",
+   "Fed minutes, October meeting"
+  ],
+  [
+   "8 to 9 Dec",
+   "Federal Reserve decision"
+  ]
+ ]
+}
