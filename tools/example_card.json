@@ -1,0 +1,6 @@
+{"kicker": "US INFLATION", "big": "+0.4%",
+ "headline": "US consumer prices rose faster than forecast in October",
+ "stats": [{"label": "Forecast", "value": "+0.3%", "tone": "neutral"},
+           {"label": "Core CPI", "value": "+0.3%", "tone": "up"},
+           {"label": "September", "value": "+0.6%", "tone": "neutral"}],
+ "source": "Source: BLS, CNBC. 10 Nov 2026"}

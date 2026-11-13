@@ -1,0 +1,14 @@
+{"date_label": "2 to 6 Nov 2026", "file_stub": "week-in-markets_test",
+ "cover": {"big": "-2.7%", "headline": ["The S&P 500's worst week", "since April 2025"],
+           "context": "AI and election jitters made it a fourth straight losing week. Here is the week in four charts."},
+ "slides": [
+  {"kicker": "The scoreboard", "title": "Tech took the hardest hit", "subtitle": "Weekly change, major US indexes (week to 6 Nov)",
+   "chart": {"type": "hbar", "labels": ["Dow","Russell 2000","S&P 500","Nasdaq"], "values": [-0.9,-2.1,-2.7,-3.4], "tone": "down", "suffix": "%", "signed": true}},
+  {"kicker": "One day did the damage", "title": "Thursday: -4.4% in one day", "subtitle": "S&P 500 closes",
+   "chart": {"type": "line", "labels": ["6 Oct\nrecord","30 Oct\nclose","Thu\n5 Nov","Fri\n6 Nov"], "values": [7818.93,7580.07,7353.73,7376.86], "decimals": 0},
+   "keyfig": "5.7% below the October record"},
+  {"kicker": "The fear gauge", "title": "Volatility up almost a third", "subtitle": "CBOE Volatility Index (VIX), weekly close",
+   "chart": {"type": "hbar", "labels": ["30 Oct","6 Nov"], "values": [19.4,25.6], "tone": "neutral"}, "keyfig": "+32% on the week"},
+  {"kicker": "The bigger picture", "title": "Still in the green for 2026", "subtitle": "Year-to-date change after Friday's close",
+   "chart": {"type": "hbar", "labels": ["Russell 2000","S&P 500","Dow","Nasdaq"], "values": [11.0,7.8,6.7,5.8], "tone": "up", "suffix": "%", "signed": true}}],
+ "watch": [["Tue 10 Nov","US CPI for October"],["Fri 13 Nov","US producer prices (PPI)"],["Mon 17 Nov","Nvidia quarterly results"],["8 to 9 Dec","Federal Reserve decision"]]}
