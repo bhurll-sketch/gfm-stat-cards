@@ -51,6 +51,7 @@ for s in ("Regular", "Medium", "Bold"):
 plt.rcParams["font.family"] = "Poppins" if os.path.exists(FD + "Poppins-Regular.ttf") else "DejaVu Sans"
 
 LOGO = Image.open(os.path.join(HERE, "assets", "logo_box.png")).convert("RGBA")
+LOGO_LIGHT = Image.open(os.path.join(HERE, "assets", "logo_light.png")).convert("RGBA")
 _face = Image.open(os.path.join(HERE, "assets", "portrait.png")).convert("RGBA").resize((300, 300), Image.LANCZOS)
 _mask = Image.new("L", _face.size, 0); ImageDraw.Draw(_mask).ellipse((0, 0, 299, 299), fill=255)
 FACE = Image.new("RGBA", _face.size, (0, 0, 0, 0)); FACE.paste(_face, (0, 0), _mask)
@@ -93,13 +94,18 @@ def portrait(im, d, x, y, size):
 
 
 def header(im, kicker):
+    """Header line (section 6): kicker left, light logo right (260 px, 85% opacity), divider beneath."""
     d = ImageDraw.Draw(im)
-    lw = 420
-    lg = LOGO.resize((lw, int(LOGO.height * lw / LOGO.width)), Image.LANCZOS)
-    im.paste(lg, ((W - lw) // 2, 56), lg)
-    y = 56 + lg.height + 34
-    centre(d, y, kicker.upper(), F("Bold", 26), KICKER)
-    return d, y + 60
+    lw, top = 260, 60
+    lg = LOGO_LIGHT.resize((lw, int(LOGO_LIGHT.height * lw / LOGO_LIGHT.width)), Image.LANCZOS)
+    a = lg.getchannel("A").point(lambda v: int(v * 0.85)); lg.putalpha(a)
+    im.paste(lg, (W - 90 - lw, top), lg)
+    fk = F("Bold", 26)
+    kh = fk.getbbox(kicker.upper())[3]
+    d.text((90, top + (lg.height - kh) / 2), kicker.upper(), font=fk, fill=KICKER)
+    ry = top + lg.height + 22
+    d.line([(90, ry), (W - 90, ry)], fill=(0x22, 0x34, 0x4F), width=2)
+    return d, ry + 60
 
 
 def footer(d, page=None):
@@ -121,8 +127,8 @@ def render_card(spec, out):
     im = canvas(); d, y = header(im, spec["kicker"])
     big = spec["big"]
     fb = fit(d, big, "Bold", 210, W - 160)
-    centre(d, 360, big, fb, INK)
-    y = 360 + fb.size + 40
+    top = 300; centre(d, top, big, fb, INK)
+    y = top + fb.size + 50
     for ln in wrap(d, spec["headline"], F("Medium", 38), W - 220)[:3]:
         centre(d, y, ln, F("Medium", 38), MUTED); y += 54
     stats = spec.get("stats", [])[:3]
