@@ -28,8 +28,8 @@ def logo_box(src, name):
         inner = f'<img src="{src}" alt="{html.escape(name)} logo" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block">'
         border = f"border: 1px solid {RULE};"
     else:
-        inner = f'<span style="font-size: 18px; font-weight: 600; color: {GREY}">[{html.escape(name.split()[0])} logo]</span>'
-        border = "border: 2px dashed #AEB8C6;"
+        # no logo on file: keep the column width so rows line up, but show nothing in a published card
+        return '<div style="flex: none; width: 210px; height: 100px"></div>'
     return (f'<div style="flex: none; width: 210px; height: 100px; {border} border-radius: 14px; display: flex; align-items: center; '
             f'justify-content: center; padding: 12px 20px; box-sizing: border-box; text-align: center">{inner}</div>')
 
