@@ -411,7 +411,7 @@ def chart_line(ax, p):
         if p.get('area') and col == HI:
             ax.fill_between(range(n), s['values'], color=HI, alpha=0.07)
     ax.set_xlim(-0.2, n - 1 + 0.9)
-    ax.set_ylim(0, top)
+    ax.set_ylim(p.get('ymin', 0), p.get('ymax', top))
     ax.yaxis.set_major_locator(mt.MaxNLocator(5))
     ax.yaxis.set_major_formatter(mt.FuncFormatter(lambda v, _: f"{v:,.0f}"))
     ax.set_xticks(range(n)); ax.set_xticklabels(p['labels'])
